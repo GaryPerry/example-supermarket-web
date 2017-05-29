@@ -1,0 +1,52 @@
+{
+    "env": "dev",
+    "use_sass": false,
+    "bases": {
+        "dist": "dist/",
+        "src": "src/"
+    },
+    "path": {
+        "scripts": [
+            "src/**/*.js",
+            "!src/bower_components/**"
+        ],
+        "libs": [
+            "src/bower_components/angular/angular.min.js",
+            "src/bower_components/angular-ui-router/release/angular-ui-router.js"
+        ],
+        "css": [
+            "src/bower_components/bootstrap/dist/css/bootstrap.css",
+            "src/bower_components/font-awesome/css/font-awesome.css",
+            "src/css/**/*.css"
+        ],
+        "sass": {
+            "src": [
+                "src/scss/**/*.scss"
+            ],
+            "conf": {
+                "outputStyle": "nested",
+                "includePaths": [
+                    "src/bower_components/bootstrap-sass/assets/stylesheets/",
+                    "src/bower_components/font-awesome/scss/"
+                ]
+            }
+        },
+        "fonts": [
+            "src/bower_components/bootstrap/dist/fonts/*",
+            "src/bower_components/font-awesome/fonts/*"
+        ],
+        "img": [
+            "src/img/**/*"
+        ],
+        "html": [
+            "src/**/*.html"
+        ],
+        "singlefiles": [
+            "src/favicon.ico"
+        ]
+    },
+    "serve": {
+        "root": "dist/",
+        "port": 8888
+    }
+}

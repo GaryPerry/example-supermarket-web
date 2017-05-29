@@ -1,0 +1,68 @@
+<div>
+    <html><head></head><body><h1 id="angular-gulp-skeleton">Angular Gulp Skeleton</h1>
+    <p>This repository is an Angular skeleton with Gulp as project builder/runner task.</p>
+    <p>It uses :</p>
+    <ul>
+        <li>AngularJs</li>
+        <li>Angular UI Router</li>
+        <li>Twitter Bootstrap (Full CSS or Sass)</li>
+        <li>Font Awesome</li>
+    </ul>
+    <h2 id="installation">Installation</h2>
+    <p>Clone the repository and remove the .git folder :</p>
+    <pre><code>git clone --depth=1 https://github.com/jbouzekri/angular-gulp-skeleton
+cd angular-gulp-skeleton
+rm -rf .git
+</code></pre><p>Install gulp globally : <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md">Official documentation</a></p>
+    <pre><code>npm install -g gulp
+</code></pre><p>Install dependencies using npm and bower. The <code>npm install</code> command will run <code>bower install</code> too :</p>
+    <pre><code>npm install
+</code></pre><h2 id="structure">Structure</h2>
+    <p>The project uses <code>gulp</code> to build and <code>bower</code> for frontend dependencies.</p>
+    <p>Your app source files will be stored in the <code>src/</code> folder. When building and serving, all files will be processed and copied to the automatically created <code>dist/</code> folder.</p>
+    <p>Some parameters of the gulp script can be configured with the <code>config.json</code> file.</p>
+    <h2 id="documentation">Documentation</h2>
+    <h3 id="building-your-sources">Building your sources</h3>
+    <p><code>gulp build [--env=prod]</code></p>
+    <ul>
+        <li>It copies all files from <code>src/</code> to <code>dist/</code> folder</li>
+        <li>With sass enabled, it processes sass files too</li>
+        <li>When used with prod env parameters, it applies all production transformations (minification, concatenation, ...)</li>
+    </ul>
+    <h3 id="serving-your-project">Serving your project</h3>
+    <p><code>gulp serve [--env=prod] [--watch [--no-livereload] [--tdd]]</code></p>
+    <ul>
+        <li>This command build (like the previous command) files then serves them on <code>http://localhost:8888</code></li>
+        <li><code>--watch</code> moves changed files to <code>dist/</code> folder and launches live reload (it cannot be used with <code>--env=prod</code> parameter)</li>
+        <li><code>--watch --no-livereload</code> same as the before but without live reload</li>
+        <li><code>--watch --tdd</code> same as before but lanches test units at each changes</li>
+    </ul>
+    <h3 id="testing-your-project">Testing your project</h3>
+    <p><code>gulp test:unit</code></p>
+    <ul>
+        <li>Run unit tests</li>
+    </ul>
+    <p><code>gulp test:e2e [--env=prod]</code></p>
+    <ul>
+        <li>Run functional tests. The site should be available on localhost:8888 before running this command.</li>
+    </ul>
+    <p><em>Note : Check the value of the seleniumJar in test/protractor.conf.js and verify that the version is the same that was downloaded.</em></p>
+    <p>You can use <code>npm run-script protactor-webdriver</code> to download the selenium server jar.</p>
+    <h3 id="configuration">Configuration</h3>
+    <p>Configuration is located in :</p>
+    <ul>
+        <li><code>test/karma.conf.js</code>  : test unit configuration</li>
+        <li><code>ŧest/protractor.conf.js</code> : functional test configuration</li>
+        <li><code>config.json</code> : task general configuration</li>
+    </ul>
+    <p>For Karma and Protractor, go to their respective documentation.</p>
+    <p>In <code>config.json</code>, you can configure :</p>
+    <ul>
+        <li><code>env</code> : default environment</li>
+        <li><code>use_sass</code> : enable the use of sass or css</li>
+        <li><code>bases</code> : base folders</li>
+        <li><code>path</code> : paths with wildcards to find scripts, stylesheets, fonts, images, ...</li>
+        <li><code>serve</code> : serve server host and port</li>
+    </ul>
+    </body></html>
+</div>
